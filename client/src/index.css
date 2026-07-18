@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #FF9933;
+  --primary-dark: #cc7a29;
+  --cream: #FDFCFB;
+  --brown: #2D1A12;
+  --cream-dark: #F5E6D3;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--cream);
+  font-family: 'Poppins', sans-serif;
+  color: var(--brown);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Components */
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-primary text-white font-semibold rounded-asymmetric hover:bg-primary-dark transition-all duration-300 transform active:scale-95 shadow-lg;
+  }
+
+  .card-asymmetric {
+    @apply bg-white border border-cream-dark p-6 rounded-asymmetric shadow-sm hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold text-center mb-12 relative;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply block w-24 h-1 bg-primary mx-auto mt-4 rounded-full;
+  }
+}
+
+/* Mandala Overlay Style */
+.mandala-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mandala-bg::before {
+  content: 'ॐ';
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40rem;
+  opacity: 0.03;
+  top: -10rem;
+  right: -10rem;
+  pointer-events: none;
+  color: var(--primary);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
