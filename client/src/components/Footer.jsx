@@ -54,7 +54,7 @@ const Footer = () => {
                         <ul className="space-y-4 text-cream-dark">
                             <li className="flex items-center space-x-3">
                                 <Phone size={18} className="text-primary" />
-                                <span>+91 9096423272</span>
+                                <span>+91 8074898247</span>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail size={18} className="text-primary" />
@@ -62,7 +62,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center space-x-3">
                                 <MapPin size={18} className="text-primary" />
-                                <span>Kolhapur, Maharashtra, India</span>
+                                <span>/Kakinada, Andhra Pradesh, India</span>
                             </li>
                         </ul>
                     </div>
