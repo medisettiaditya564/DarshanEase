@@ -156,16 +156,36 @@ const TempleDetail = () => {
                     {/* Immersive Content - 8 Cols */}
                     <div className="lg:col-span-8 space-y-20">
                         {/* High-Fidelity Gallery */}
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-[500px]">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                className="md:col-span-8 h-full rounded-[40px] overflow-hidden shadow-2xl relative group"
-                            >
-                                <img src={temple.images[0]} alt={temple.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                            </motion.div>
-                            <div className="md:col-span-4 h-full flex flex-col gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 min-h-[550px]">
+    <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="md:col-span-8 bg-[#FDFBF7] rounded-[40px] overflow-hidden shadow-2xl flex flex-col justify-between group border border-cream-dark/30"
+    >
+        {/* TEXT AREA AT THE TOP */}
+        <div className="p-8 pb-4">
+            <h2 className="text-3xl font-black text-brown tracking-tight mb-1">
+                {temple.name}
+            </h2>
+            <p className="text-xs font-black uppercase tracking-widest text-primary mb-4">
+                {temple.location.city}, {temple.location.state}
+            </p>
+            <p className="text-sm font-medium text-brown/70 leading-relaxed line-clamp-3">
+                {temple.description}
+            </p>
+        </div>
+
+        {/* IMAGE AREA AT THE BOTTOM */}
+        <div className="w-full h-60 overflow-hidden mt-auto relative">
+            <img 
+                src={temple.images[0]} 
+                alt={temple.name} 
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+        </div>
+    </motion.div>
+                     <div className="md:col-span-4 h-full flex flex-col gap-6">
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -205,7 +225,7 @@ const TempleDetail = () => {
                                         <span className="text-[10px] font-black uppercase tracking-widest tracking-widest">Verified Temple</span>
                                     </div>
                                 </div>
-                                <h1 className="text-5xl md:text-7xl font-black text-brown tracking-tighter leading-none">{temple.name}</h1>
+                                
 
                                 <div className="flex items-center gap-6 py-6 border-y border-cream-dark/50">
                                     <div className="flex items-center gap-4">
@@ -230,14 +250,7 @@ const TempleDetail = () => {
                                 </div>
                             </div>
 
-                            <div className="space-y-6">
-                                <h4 className="text-xs font-black uppercase tracking-[0.3em] text-primary">Temple Chronicles</h4>
-                                <div className="prose prose-stone max-w-none">
-                                    <p className="text-lg text-brown/70 leading-relaxed font-medium">
-                                        {temple.description}
-                                    </p>
-                                </div>
-                            </div>
+                        
 
                             {/* Facilities Hub */}
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10">
