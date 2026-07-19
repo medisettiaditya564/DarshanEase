@@ -285,7 +285,7 @@ Use these credentials to explore the platform.
 Email
 
 ```
-admin@darshanease.com
+admin@darshan.com
 ```
 
 Password 
@@ -301,7 +301,7 @@ Admin@123
 Email
 
 ```
-organizer@darshanease.com
+organizer@darshan.com
 ```
 
 Password
@@ -317,7 +317,7 @@ Org@123
 Email
 
 ```
-user@darshanease.com
+user@darshan.com
 ```
 
 Password
