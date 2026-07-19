@@ -35,9 +35,13 @@ exports.login = async (req, res) => {
         if (!email || !password)
             return res.status(400).json({ success: false, message: 'Please provide email and password' });
 
-        const user = await User.findOne({ email });
-        if (!user || !(await user.matchPassword(password)))
-            return res.status(401).json({ success: false, message: 'Invalid credentials' });
+        // Trim spaces, convert to lowercase, and force Mongoose to select the hidden password
+    const cleanEmail = email.toLowerCase().trim();
+    const user = await User.findOne({ email: cleanEmail }).select('+password');
+
+    if (!user || !(await user.matchPassword(password))) {
+      return res.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
 
         if (!user.isActive)
             return res.status(403).json({ success: false, message: 'Account deactivated' });
